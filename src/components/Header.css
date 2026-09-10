@@ -1,0 +1,114 @@
+/* Reference metrics (722px artboard): logo circle 24px at (22,20),
+   wordmark cap-top y=22, nav baseline ≈ y=21, search icon right edge x=693. */
+
+.header {
+  z-index: 50;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: calc(722 * var(--u));
+  margin: 0 auto;
+  padding: calc(19 * var(--u)) calc(29 * var(--u)) 0 calc(22 * var(--u));
+  font-family: var(--font);
+}
+
+/* Home: sits on top of the hero panel, exactly like the reference. */
+.header--overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Other pages: a normal bar in flow. */
+.header--bar {
+  position: sticky;
+  top: 0;
+  padding-bottom: calc(12 * var(--u));
+  border-bottom: 1px solid var(--border-soft);
+  background: rgb(255 253 248 / 92%);
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(4 * var(--u));
+  color: #2b2723;
+  text-decoration: none;
+}
+
+.brand__mark {
+  width: calc(24 * var(--u));
+  height: calc(24 * var(--u));
+  margin-top: calc(1 * var(--u));
+}
+
+.brand span {
+  display: block;
+  font-size: calc(15 * var(--u));
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.brand small {
+  display: block;
+  margin-top: calc(4 * var(--u));
+  color: #8a8278;
+  font-size: calc(7.5 * var(--u));
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: calc(13 * var(--u));
+  margin-top: calc(-6 * var(--u));
+}
+
+.nav__link {
+  position: relative;
+  padding-bottom: calc(2 * var(--u));
+  color: #6a635b;
+  font-size: calc(8 * var(--u));
+  line-height: 1;
+  text-decoration: none;
+  transition: color var(--ease);
+}
+
+.nav__link:hover { color: #2b2723; }
+
+.nav__link.is-active {
+  color: #3a3632;
+}
+
+.nav__link.is-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #3a3632;
+}
+
+.search {
+  display: grid;
+  place-items: center;
+  width: calc(12 * var(--u));
+  height: calc(12 * var(--u));
+  margin-left: calc(4 * var(--u));
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #6a635b;
+}
+
+.search svg {
+  width: 100%;
+  height: 100%;
+}
+
+.search:hover { color: #2b2723; }

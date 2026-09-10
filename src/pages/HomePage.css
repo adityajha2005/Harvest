@@ -1,0 +1,516 @@
+/*
+  The reference artboard is 722px wide. Every measurement below is taken from
+  it in reference pixels and multiplied by --u (1/722 of the viewport width),
+  so the page scales proportionally and stays 1:1 with the design.
+*/
+
+.page {
+  position: relative;
+  width: calc(722 * var(--u));
+  margin: 0 auto;
+  padding: 0 calc(13 * var(--u)) calc(24 * var(--u));
+  font-family: var(--font);
+  color: #2b2723;
+}
+
+.page section {
+  position: relative;
+}
+
+/* ── hero (y 4–403) ── */
+.hero {
+  height: calc(399 * var(--u));
+  margin-top: calc(4 * var(--u));
+  border-radius: calc(12 * var(--u));
+  background: #fdf2e3;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Reference: cap height 117u, "HARVEST" 31→400, "G1" →690. The face is a
+   heavily condensed grotesque (≈0.53× Inter's width), so Inter is squeezed
+   horizontally to match the letter proportions. */
+.hero__mark {
+  position: absolute;
+  inset: 0;
+  color: #eadcca;
+  font-size: calc(161 * var(--u));
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Transforms don't affect layout, so each word is placed absolutely and
+   squeezed from its own outer edge. */
+.hero__mark span {
+  position: absolute;
+  top: calc(77 * var(--u));
+  transform: scaleX(0.53);
+}
+
+.hero__mark span:first-child {
+  left: calc(18 * var(--u));
+  transform-origin: left center;
+}
+
+.hero__mark span:last-child {
+  right: calc(19 * var(--u));
+  transform-origin: right center;
+}
+
+.hero__robot {
+  position: absolute;
+  left: calc(368 * var(--u));
+  bottom: 0;
+  width: calc(258 * var(--u));
+  height: auto;
+  pointer-events: none;
+}
+
+.hero__copy {
+  position: absolute;
+  left: calc(19 * var(--u));
+  top: calc(262 * var(--u));
+}
+
+.hero__copy p {
+  margin: 0;
+  color: #6f6a64;
+  font-size: calc(8 * var(--u));
+  line-height: 1.3;
+}
+
+.hero__copy h1 {
+  margin: calc(3 * var(--u)) 0 0;
+  color: #3a3632;
+  font-size: calc(20 * var(--u));
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.stats {
+  position: absolute;
+  left: calc(19 * var(--u));
+  top: calc(319 * var(--u));
+  display: flex;
+  gap: calc(7 * var(--u));
+}
+
+.stats article {
+  width: calc(102 * var(--u));
+  height: calc(63 * var(--u));
+  padding: calc(15 * var(--u)) calc(10 * var(--u)) 0;
+  border: 1px solid #ede6da;
+  border-radius: calc(9 * var(--u));
+  background: #fdfcfa;
+}
+
+.stats strong {
+  display: block;
+  color: #3a3632;
+  font-size: calc(14 * var(--u));
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.stats strong span {
+  display: block;
+}
+
+.stats small {
+  display: block;
+  margin-top: calc(5 * var(--u));
+  color: #7a746d;
+  font-size: calc(8 * var(--u));
+  line-height: 1.2;
+}
+
+/* ── perception band (y 403–559) ── */
+.perception {
+  height: calc(156 * var(--u));
+  margin: 0 calc(-13 * var(--u));
+}
+
+.frame {
+  position: absolute;
+  width: calc(10 * var(--u));
+  height: calc(10 * var(--u));
+  border: 1px solid #b9ad9c;
+}
+
+.frame--tl { top: calc(17 * var(--u)); left: calc(34 * var(--u)); border-right: 0; border-bottom: 0; }
+.frame--tr { top: calc(17 * var(--u)); right: calc(34 * var(--u)); border-left: 0; border-bottom: 0; }
+.frame--bl { bottom: calc(24 * var(--u)); left: calc(34 * var(--u)); border-right: 0; border-top: 0; }
+.frame--br { bottom: calc(24 * var(--u)); right: calc(34 * var(--u)); border-left: 0; border-top: 0; }
+
+.tick {
+  position: absolute;
+  left: 50%;
+  width: 1px;
+  height: calc(8 * var(--u));
+  background: #8f8677;
+}
+
+.tick--top { top: calc(8 * var(--u)); }
+.tick--bottom { bottom: calc(14 * var(--u)); }
+
+.leaders,
+.specs__lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.leaders path,
+.specs__lines path {
+  fill: none;
+  stroke: #b9ad9c;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.callout {
+  position: absolute;
+  margin: 0;
+  color: #7a736a;
+  font-size: calc(6.3 * var(--u));
+  line-height: calc(8.5 * var(--u));
+}
+
+.callout--left {
+  top: calc(41 * var(--u));
+  right: calc(570 * var(--u));
+  text-align: right;
+}
+
+.callout--right {
+  top: calc(34 * var(--u));
+  left: calc(532 * var(--u));
+}
+
+.lens {
+  position: absolute;
+  top: calc(87 * var(--u));
+  left: calc(120 * var(--u));
+  width: calc(32 * var(--u));
+}
+
+.module {
+  position: absolute;
+  top: calc(30 * var(--u));
+  left: calc(564 * var(--u));
+  width: calc(106 * var(--u));
+}
+
+.perception__copy {
+  position: absolute;
+  top: calc(41 * var(--u));
+  left: 50%;
+  width: calc(340 * var(--u));
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.perception__copy .kicker {
+  margin: 0;
+  color: #8a8278;
+  font-size: calc(6.5 * var(--u));
+  line-height: 1;
+}
+
+.perception__copy h2 {
+  margin: calc(5 * var(--u)) 0 0;
+  color: #5a544c;
+  font-size: calc(17 * var(--u));
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.perception__copy p:last-child {
+  margin: calc(9 * var(--u)) 0 0;
+  color: #6f685f;
+  font-size: calc(9 * var(--u));
+  line-height: calc(13 * var(--u));
+  white-space: nowrap;
+}
+
+/* ── specs panel (y 559–727) ── */
+.specs {
+  height: calc(168 * var(--u));
+  border-radius: calc(12 * var(--u));
+  background: #fbf0e2;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.specs__mark {
+  position: absolute;
+  top: calc(63 * var(--u));
+  left: calc(50% + 4 * var(--u));
+  margin: 0;
+  transform: translateX(-50%);
+  color: #4b4642;
+  font-size: calc(91 * var(--u));
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+.specs__robot {
+  position: absolute;
+  top: calc(3 * var(--u));
+  left: calc(290 * var(--u));
+  width: calc(120 * var(--u));
+  height: auto;
+}
+
+.note {
+  position: absolute;
+  margin: 0;
+  color: #7a736a;
+  font-size: calc(6.3 * var(--u));
+  line-height: calc(8.5 * var(--u));
+}
+
+.note--brand {
+  top: calc(16 * var(--u));
+  left: calc(33 * var(--u));
+  color: #4b4642;
+  font-size: calc(11 * var(--u));
+  font-weight: 700;
+  line-height: 1;
+}
+
+.note--brand small {
+  display: block;
+  margin-top: calc(9 * var(--u));
+  color: #7a736a;
+  font-size: calc(6.3 * var(--u));
+  font-weight: 400;
+}
+
+.note--persom { top: calc(33 * var(--u)); right: calc(434 * var(--u)); text-align: right; }
+.note--integrated { top: calc(9 * var(--u)); left: calc(445 * var(--u)); }
+.note--industrial { top: calc(144 * var(--u)); left: calc(33 * var(--u)); }
+.note--coolant { top: calc(147 * var(--u)); left: calc(484 * var(--u)); }
+
+/* ── bento (y 732–852) ── */
+.bento {
+  display: grid;
+  grid-template-columns: 178fr 136fr 207fr 113fr;
+  gap: calc(7 * var(--u));
+  height: calc(120 * var(--u));
+  margin: calc(5 * var(--u)) calc(21 * var(--u)) 0 calc(19 * var(--u));
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: calc(9 * var(--u));
+}
+
+.card--cream {
+  padding: calc(10 * var(--u)) calc(12 * var(--u));
+  background: #f9ebdb;
+  color: #4b4642;
+}
+
+.card__label {
+  margin: 0;
+  color: #7a736a;
+  font-size: calc(6.5 * var(--u));
+  line-height: 1.3;
+}
+
+.card h3,
+.card h4,
+.card strong {
+  margin: 0;
+  color: #4b4642;
+  letter-spacing: -0.015em;
+}
+
+/* Gold cards: the source renders have their own captions baked in; those were
+   painted out (npu-bg / sw-bg) so the caption can be set at the reference size
+   and the artwork positioned independently. */
+.card--gold {
+  padding: calc(10 * var(--u)) calc(14 * var(--u));
+  color: #fff;
+}
+
+.card__gold-label {
+  margin: 0;
+  font-size: calc(6.5 * var(--u));
+  line-height: 1.3;
+  opacity: 0.95;
+}
+
+.card--gold h3 {
+  margin: calc(1 * var(--u)) 0 0;
+  color: #fff;
+  font-size: calc(9 * var(--u));
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Reference: head brim spans card x 32→152, crown at y≈21. */
+.card--npu {
+  background: #d9961f url('/npu-bg.png') no-repeat;
+  background-size: calc(238.6 * var(--u)) calc(140.9 * var(--u));
+  background-position: calc(-38 * var(--u)) calc(-6 * var(--u));
+}
+
+/* Reference: body centred in the card. */
+.card--sw {
+  background: #d9961f url('/sw-bg.png') no-repeat;
+  background-size: calc(144.5 * var(--u)) calc(136.8 * var(--u));
+  background-position: calc(-15.5 * var(--u)) calc(-9.2 * var(--u));
+}
+
+.card--power h3 {
+  margin-top: calc(3 * var(--u));
+  font-size: calc(12.5 * var(--u));
+  font-weight: 600;
+  line-height: calc(14 * var(--u));
+}
+
+.card--power h3 + .card__label { margin-top: calc(4 * var(--u)); }
+
+.card--power strong {
+  display: block;
+  margin: calc(3 * var(--u)) 0 calc(4 * var(--u));
+  font-size: calc(15 * var(--u));
+  font-weight: 600;
+  line-height: 1;
+}
+
+.card--power .card__label + .card__label { margin-top: calc(6 * var(--u)); }
+
+.stack {
+  display: grid;
+  grid-template-rows: 67fr 47fr;
+  gap: calc(6 * var(--u));
+}
+
+.split {
+  display: grid;
+  grid-template-columns: calc(105 * var(--u)) 1fr;
+  margin-top: calc(6 * var(--u));
+}
+
+.split strong {
+  display: block;
+  font-size: calc(15 * var(--u));
+  font-weight: 600;
+  line-height: 1;
+}
+
+.split .card__label { margin-top: calc(6 * var(--u)); }
+
+.card--loco {
+  display: flex;
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.card--loco h4 {
+  font-size: calc(10 * var(--u));
+  font-weight: 500;
+  line-height: calc(12 * var(--u));
+}
+
+.card--loco img {
+  position: absolute;
+  top: 50%;
+  left: calc(94 * var(--u));
+  width: calc(70 * var(--u));
+  transform: translateY(-50%);
+}
+
+/* ── growth (y 862→) ── */
+.growth {
+  height: calc(175 * var(--u));
+  margin-top: calc(10 * var(--u));
+  padding: calc(11 * var(--u)) calc(20 * var(--u));
+  border: 1px solid #ebe2d3;
+  border-radius: calc(12 * var(--u));
+  background: #f9f2e4;
+  overflow: hidden;
+}
+
+.growth h2 {
+  margin: 0;
+  color: #2b2723;
+  font-size: calc(25 * var(--u));
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.growth__grid {
+  display: grid;
+  grid-template-columns: calc(166 * var(--u)) calc(161 * var(--u)) calc(180 * var(--u));
+  column-gap: calc(17 * var(--u));
+  margin-top: calc(15 * var(--u));
+}
+
+.growth__grid article {
+  position: relative;
+}
+
+.growth__grid article + article::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: calc(-12 * var(--u));
+  left: calc(-17 * var(--u));
+  width: 1px;
+  background: #d8cfbf;
+}
+
+.growth__grid span {
+  display: block;
+  color: #5a534d;
+  font-size: calc(27 * var(--u));
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.growth__grid p {
+  margin: calc(7 * var(--u)) 0 0;
+  color: #6a635b;
+  font-size: calc(10 * var(--u));
+  line-height: calc(15 * var(--u));
+}
+
+.growth__grid em {
+  color: #c8932c;
+  font-size: calc(13 * var(--u));
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Reference: fingertips at panel (537, 35), cuff running off the bottom-right. */
+.growth__hand {
+  position: absolute;
+  top: calc(4 * var(--u));
+  left: calc(500 * var(--u));
+  width: calc(300 * var(--u));
+  pointer-events: none;
+}
