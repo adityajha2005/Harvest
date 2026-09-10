@@ -33,7 +33,7 @@
 .hero__mark {
   position: absolute;
   inset: 0;
-  color: #eadcca;
+  color: #e4d5c1;
   font-size: calc(161 * var(--u));
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -61,11 +61,12 @@
   transform-origin: right center;
 }
 
+/* Segment cut from the reference; matched at (374,57)–(639,401). */
 .hero__robot {
   position: absolute;
-  left: calc(368 * var(--u));
-  bottom: 0;
-  width: calc(258 * var(--u));
+  left: calc(361 * var(--u));
+  top: calc(53 * var(--u));
+  width: calc(265 * var(--u));
   height: auto;
   pointer-events: none;
 }
@@ -103,16 +104,16 @@
 .stats article {
   width: calc(102 * var(--u));
   height: calc(63 * var(--u));
-  padding: calc(15 * var(--u)) calc(10 * var(--u)) 0;
-  border: 1px solid #ede6da;
+  padding: calc(13 * var(--u)) calc(10 * var(--u)) 0;
   border-radius: calc(9 * var(--u));
   background: #fdfcfa;
+  box-shadow: 0 1px 3px rgb(90 70 40 / 6%), 0 0 0 1px rgb(120 100 70 / 5%);
 }
 
 .stats strong {
   display: block;
   color: #3a3632;
-  font-size: calc(14 * var(--u));
+  font-size: calc(17.5 * var(--u));
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.1;
@@ -229,7 +230,7 @@
 .perception__copy h2 {
   margin: calc(5 * var(--u)) 0 0;
   color: #5a544c;
-  font-size: calc(17 * var(--u));
+  font-size: calc(15.3 * var(--u));
   font-weight: 600;
   letter-spacing: -0.015em;
   line-height: 1;
@@ -239,7 +240,7 @@
 .perception__copy p:last-child {
   margin: calc(9 * var(--u)) 0 0;
   color: #6f685f;
-  font-size: calc(9 * var(--u));
+  font-size: calc(8.7 * var(--u));
   line-height: calc(13 * var(--u));
   white-space: nowrap;
 }
@@ -269,11 +270,13 @@
   user-select: none;
 }
 
+/* Segment composite (hat, head, shirt, overalls) matched at (266,560); the
+   panel clips it at the bottom exactly like the reference. */
 .specs__robot {
   position: absolute;
-  top: calc(3 * var(--u));
-  left: calc(290 * var(--u));
-  width: calc(120 * var(--u));
+  top: calc(4.6 * var(--u));
+  left: calc(259 * var(--u));
+  width: calc(175.2 * var(--u));
   height: auto;
 }
 
@@ -343,12 +346,17 @@
   letter-spacing: -0.015em;
 }
 
-/* Gold cards: the source renders have their own captions baked in; those were
-   painted out (npu-bg / sw-bg) so the caption can be set at the reference size
-   and the artwork positioned independently. */
+/* Gold cards: flat gold background with the segment artwork placed absolutely
+   at its measured reference position; captions layered above. */
 .card--gold {
   padding: calc(10 * var(--u)) calc(14 * var(--u));
   color: #fff;
+}
+
+.card--gold > p,
+.card--gold > h3 {
+  position: relative;
+  z-index: 1;
 }
 
 .card__gold-label {
@@ -361,30 +369,47 @@
 .card--gold h3 {
   margin: calc(1 * var(--u)) 0 0;
   color: #fff;
-  font-size: calc(9 * var(--u));
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: calc(6.5 * var(--u));
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.3;
+  opacity: 0.95;
 }
 
-/* Reference: head brim spans card x 32→152, crown at y≈21. */
-.card--npu {
-  background: #d9961f url('/npu-bg.png') no-repeat;
-  background-size: calc(238.6 * var(--u)) calc(140.9 * var(--u));
-  background-position: calc(-38 * var(--u)) calc(-6 * var(--u));
-}
-
-/* Reference: body centred in the card. */
+/* Gold sampled from the reference cards (≈#d29039 → #d18c31). */
+.card--npu,
 .card--sw {
-  background: #d9961f url('/sw-bg.png') no-repeat;
-  background-size: calc(144.5 * var(--u)) calc(136.8 * var(--u));
-  background-position: calc(-15.5 * var(--u)) calc(-9.2 * var(--u));
+  background: linear-gradient(180deg, #d4923d 0%, #d08c31 100%);
 }
 
+.card--gold img {
+  position: absolute;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Segment (hat + wire-frame head) matched at page (46,746); card origin (32,732). */
+.card--npu img {
+  left: calc(14 * var(--u));
+  top: calc(14 * var(--u));
+  width: calc(134.5 * var(--u));
+}
+
+/* Segment matched at page (588,720); card origin (576,732). */
+.card--sw img {
+  left: calc(12 * var(--u));
+  top: calc(-12 * var(--u));
+  width: calc(57 * var(--u));
+}
+
+/* Reference: "Stable Environmental" fits one line in 109u. */
 .card--power h3 {
+  width: calc(120 * var(--u));
   margin-top: calc(3 * var(--u));
-  font-size: calc(12.5 * var(--u));
+  font-size: calc(11.6 * var(--u));
   font-weight: 600;
-  line-height: calc(14 * var(--u));
+  letter-spacing: -0.035em;
+  line-height: calc(13 * var(--u));
 }
 
 .card--power h3 + .card__label { margin-top: calc(4 * var(--u)); }
@@ -443,9 +468,9 @@
 
 /* ── growth (y 862→) ── */
 .growth {
-  height: calc(175 * var(--u));
+  height: calc(161 * var(--u));
   margin-top: calc(10 * var(--u));
-  padding: calc(11 * var(--u)) calc(20 * var(--u));
+  padding: calc(11 * var(--u)) calc(20 * var(--u)) 0 calc(27 * var(--u));
   border: 1px solid #ebe2d3;
   border-radius: calc(12 * var(--u));
   background: #f9f2e4;
@@ -457,7 +482,7 @@
   color: #2b2723;
   font-size: calc(25 * var(--u));
   font-weight: 800;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -466,7 +491,7 @@
   display: grid;
   grid-template-columns: calc(166 * var(--u)) calc(161 * var(--u)) calc(180 * var(--u));
   column-gap: calc(17 * var(--u));
-  margin-top: calc(15 * var(--u));
+  margin: calc(15 * var(--u)) 0 0 calc(5 * var(--u));
 }
 
 .growth__grid article {
@@ -486,7 +511,7 @@
 .growth__grid span {
   display: block;
   color: #5a534d;
-  font-size: calc(27 * var(--u));
+  font-size: calc(23 * var(--u));
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1;
@@ -509,8 +534,8 @@
 /* Reference: fingertips at panel (537, 35), cuff running off the bottom-right. */
 .growth__hand {
   position: absolute;
-  top: calc(4 * var(--u));
-  left: calc(500 * var(--u));
-  width: calc(300 * var(--u));
+  bottom: 0;
+  left: calc(539 * var(--u));
+  width: calc(159 * var(--u));
   pointer-events: none;
 }

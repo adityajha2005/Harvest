@@ -15,7 +15,7 @@ export default function HomePage() {
           <span>HARVEST</span>
           <span>G1</span>
         </div>
-        <img className="hero__robot" src="/herosectionfinalimg.png" alt="HARVEST G1 field robot" />
+        <img className="hero__robot" src="/seg-hero-robot.png" alt="HARVEST G1 field robot" />
         <div className="hero__copy">
           <p>Intelligent robot</p>
           <h1>RWA Field Data Robot</h1>
@@ -83,7 +83,7 @@ export default function HomePage() {
         <p className="specs__mark" aria-hidden="true">
           HARVEST-G1
         </p>
-        <img className="specs__robot" src="/specsrobotnew.png" alt="HARVEST G1 full body" />
+        <img className="specs__robot" src="/seg-specs-robot.png" alt="HARVEST G1 full body" />
 
         <svg className="specs__lines" viewBox="0 0 696 168" preserveAspectRatio="none" aria-hidden="true">
           <path d="M266 37 H297 L306 56" />
@@ -126,6 +126,7 @@ export default function HomePage() {
         <article className="card card--gold card--npu">
           <p className="card__gold-label">Neural Processing Unit</p>
           <h3>Field Data AI</h3>
+          <img src="/seg-npu-head.png" alt="" />
         </article>
 
         <article className="card card--cream card--power">
@@ -167,6 +168,7 @@ export default function HomePage() {
 
         <article className="card card--gold card--sw">
           <p className="card__gold-label">SW speaker</p>
+          <img src="/seg-sw-body.png" alt="" />
         </article>
       </section>
 
@@ -206,7 +208,7 @@ export default function HomePage() {
             </p>
           </article>
         </div>
-        <img className="growth__hand" src="/hand.png" alt="" />
+        <img className="growth__hand" src="/seg-hand.png" alt="" />
       </section>
     </div>
   )
